@@ -3,7 +3,7 @@ import skimage.io
 import skimage.transform
 import operator
 import os
-from caffe2.python import workspace
+from caffe2.python import workspace, core, model_helper
 from caffe2.proto import caffe2_pb2
 from helpers import *
 
@@ -15,16 +15,15 @@ predict_net = caffe2_pb2.NetDef()
 
 # read .pb files
 
-filename = "resnet50_quantized/init_net.pb"
+filename = "mobilenet_v2_quantized/init_net.pb"
 print("Reading " + filename)
 with open(filename, 'rb') as f:
     init_net.ParseFromString(f.read())
 
-filename = "resnet50_quantized/predict_net.pb"
+filename = "mobilenet_v2_quantized/predict_net.pb"
 print("Reading " + filename)
 with open(filename, 'rb') as f:
     predict_net.ParseFromString(f.read())
-
 # Initialize the predictor with Mynet's init_net and predict_net
 p = workspace.Predictor(init_net, predict_net)
 
@@ -50,7 +49,7 @@ img = loadToNCHW(img, mean, input_size)
 
 ##### Run the test
 # submit the image to net and get a tensor of results
-results = p.run({'gpu_0/data_0': img})
+results = p.run({'data': img})
 
 ##### Process the results
 # Quick way to get the top-1 prediction result
@@ -64,5 +63,3 @@ print("Top-1 Confidence: {}\n".format(curr_conf))
 # Lookup our result from the inference list
 response = parseResults(results)
 print(response)
-
-

@@ -1,0 +1,3109 @@
+name: "mobilenet_v2_quant"
+op {
+  input: "data"
+  output: "1"
+  name: ""
+  type: "NCHW2NHWC"
+}
+op {
+  input: "1"
+  output: "3"
+  name: ""
+  type: "Int8Quantize"
+  arg {
+    name: "Y_scale"
+    f: 0.0186402257532
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 114
+  }
+}
+op {
+  input: "3"
+  input: "4"
+  input: "5"
+  output: "7"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "stride"
+    i: 2
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0501052774489
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "7"
+  output: "9"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0501052774489
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "9"
+  input: "10"
+  input: "11"
+  output: "13"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0813297107816
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "13"
+  output: "15"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0813297107816
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "15"
+  input: "16"
+  input: "17"
+  output: "19"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 32
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.1194896698
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "19"
+  output: "21"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.1194896698
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "21"
+  input: "22"
+  input: "23"
+  output: "25"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 126
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0268637612462
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "25"
+  input: "26"
+  input: "27"
+  output: "29"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0781603232026
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "29"
+  output: "31"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0781603232026
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "31"
+  input: "32"
+  input: "33"
+  output: "35"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 96
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 2
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0716279894114
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "35"
+  output: "37"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0716279894114
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "37"
+  input: "38"
+  input: "39"
+  output: "58"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 138
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0240838602185
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "58"
+  input: "42"
+  input: "43"
+  output: "45"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0309359971434
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "45"
+  output: "47"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0309359971434
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "47"
+  input: "48"
+  input: "49"
+  output: "51"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 144
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0539889633656
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "51"
+  output: "53"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0539889633656
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "53"
+  input: "54"
+  input: "55"
+  output: "57"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 133
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0311781298369
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "57"
+  input: "58"
+  output: "60"
+  name: ""
+  type: "Int8Sum"
+  arg {
+    name: "Y_scale"
+    f: 0.0322667211294
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 131
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "60"
+  input: "61"
+  input: "62"
+  output: "64"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0428400672972
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "64"
+  output: "66"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0428400672972
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "66"
+  input: "67"
+  input: "68"
+  output: "70"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 144
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 2
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0477455593646
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "70"
+  output: "72"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0477455593646
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "72"
+  input: "73"
+  input: "74"
+  output: "93"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 130
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0191394165158
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "93"
+  input: "77"
+  input: "78"
+  output: "80"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0242631472647
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "80"
+  output: "82"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0242631472647
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "82"
+  input: "83"
+  input: "84"
+  output: "86"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 192
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0354982577264
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "86"
+  output: "88"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0354982577264
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "88"
+  input: "89"
+  input: "90"
+  output: "92"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 111
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0195008590817
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "92"
+  input: "93"
+  output: "112"
+  name: ""
+  type: "Int8Sum"
+  arg {
+    name: "Y_scale"
+    f: 0.0222643893212
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 128
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "112"
+  input: "96"
+  input: "97"
+  output: "99"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0230809524655
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "99"
+  output: "101"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0230809524655
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "101"
+  input: "102"
+  input: "103"
+  output: "105"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 192
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0268604476005
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "105"
+  output: "107"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0268604476005
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "107"
+  input: "108"
+  input: "109"
+  output: "111"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 123
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0173141285777
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "111"
+  input: "112"
+  output: "114"
+  name: ""
+  type: "Int8Sum"
+  arg {
+    name: "Y_scale"
+    f: 0.025790868327
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 131
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "114"
+  input: "115"
+  input: "116"
+  output: "118"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0343157052994
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "118"
+  output: "120"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0343157052994
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "120"
+  input: "121"
+  input: "122"
+  output: "124"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 192
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 2
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0484414510429
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "124"
+  output: "126"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0484414510429
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "126"
+  input: "127"
+  input: "128"
+  output: "147"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 130
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0177020970732
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "147"
+  input: "131"
+  input: "132"
+  output: "134"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0203713960946
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "134"
+  output: "136"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0203713960946
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "136"
+  input: "137"
+  input: "138"
+  output: "140"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 384
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0235432889313
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "140"
+  output: "142"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0235432889313
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "142"
+  input: "143"
+  input: "144"
+  output: "146"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 115
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.01887341775
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "146"
+  input: "147"
+  output: "166"
+  name: ""
+  type: "Int8Sum"
+  arg {
+    name: "Y_scale"
+    f: 0.0193327330053
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 122
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "166"
+  input: "150"
+  input: "151"
+  output: "153"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0196644496173
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "153"
+  output: "155"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0196644496173
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "155"
+  input: "156"
+  input: "157"
+  output: "159"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 384
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0331648848951
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "159"
+  output: "161"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0331648848951
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "161"
+  input: "162"
+  input: "163"
+  output: "165"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 134
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.00978917535394
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "165"
+  input: "166"
+  output: "185"
+  name: ""
+  type: "Int8Sum"
+  arg {
+    name: "Y_scale"
+    f: 0.0190663281828
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 121
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "185"
+  input: "169"
+  input: "170"
+  output: "172"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0184185560793
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "172"
+  output: "174"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0184185560793
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "174"
+  input: "175"
+  input: "176"
+  output: "178"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 384
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0437980107963
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "178"
+  output: "180"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0437980107963
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "180"
+  input: "181"
+  input: "182"
+  output: "184"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 168
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0394044481218
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "184"
+  input: "185"
+  output: "187"
+  name: ""
+  type: "Int8Sum"
+  arg {
+    name: "Y_scale"
+    f: 0.0427070558071
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 166
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "187"
+  input: "188"
+  input: "189"
+  output: "191"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.025180131197
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "191"
+  output: "193"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.025180131197
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "193"
+  input: "194"
+  input: "195"
+  output: "197"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 384
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0423833578825
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "197"
+  output: "199"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0423833578825
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "199"
+  input: "200"
+  input: "201"
+  output: "220"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 121
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0143412090838
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "220"
+  input: "204"
+  input: "205"
+  output: "207"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0215329099447
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "207"
+  output: "209"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0215329099447
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "209"
+  input: "210"
+  input: "211"
+  output: "213"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 576
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0379285588861
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "213"
+  output: "215"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0379285588861
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "215"
+  input: "216"
+  input: "217"
+  output: "219"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 126
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0254574213177
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "219"
+  input: "220"
+  output: "239"
+  name: ""
+  type: "Int8Sum"
+  arg {
+    name: "Y_scale"
+    f: 0.0284633263946
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 130
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "239"
+  input: "223"
+  input: "224"
+  output: "226"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0357301272452
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "226"
+  output: "228"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0357301272452
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "228"
+  input: "229"
+  input: "230"
+  output: "232"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 576
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0371162816882
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "232"
+  output: "234"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0371162816882
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "234"
+  input: "235"
+  input: "236"
+  output: "238"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 127
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0312472544611
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "238"
+  input: "239"
+  output: "241"
+  name: ""
+  type: "Int8Sum"
+  arg {
+    name: "Y_scale"
+    f: 0.0410617366433
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 131
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "241"
+  input: "242"
+  input: "243"
+  output: "245"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0429309308529
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "245"
+  output: "247"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0429309308529
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "247"
+  input: "248"
+  input: "249"
+  output: "251"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 576
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 2
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0502166077495
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "251"
+  output: "253"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0502166077495
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "253"
+  input: "254"
+  input: "255"
+  output: "274"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 126
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0151375336573
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "274"
+  input: "258"
+  input: "259"
+  output: "261"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0257826056331
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "261"
+  output: "263"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0257826056331
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "263"
+  input: "264"
+  input: "265"
+  output: "267"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 960
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0297777019441
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "267"
+  output: "269"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0297777019441
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "269"
+  input: "270"
+  input: "271"
+  output: "273"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 145
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0213923789561
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "273"
+  input: "274"
+  output: "293"
+  name: ""
+  type: "Int8Sum"
+  arg {
+    name: "Y_scale"
+    f: 0.0171822272241
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 123
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "293"
+  input: "277"
+  input: "278"
+  output: "280"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0320890955627
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "280"
+  output: "282"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0320890955627
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "282"
+  input: "283"
+  input: "284"
+  output: "286"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 960
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0309094656259
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "286"
+  output: "288"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0309094656259
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "288"
+  input: "289"
+  input: "290"
+  output: "292"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 141
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0231183171272
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "292"
+  input: "293"
+  output: "295"
+  name: ""
+  type: "Int8Sum"
+  arg {
+    name: "Y_scale"
+    f: 0.0304730366915
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 156
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "295"
+  input: "296"
+  input: "297"
+  output: "299"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.053873386234
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "299"
+  output: "301"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.053873386234
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "301"
+  input: "302"
+  input: "303"
+  output: "305"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 3
+  }
+  arg {
+    name: "pad"
+    i: 1
+  }
+  arg {
+    name: "group"
+    i: 960
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0429159104824
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "305"
+  output: "307"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0429159104824
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "307"
+  input: "308"
+  input: "309"
+  output: "311"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 128
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.0121131474152
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "311"
+  input: "312"
+  input: "313"
+  output: "315"
+  name: ""
+  type: "Int8Conv"
+  arg {
+    name: "kernel"
+    i: 1
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "pad"
+    i: 0
+  }
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.165826797485
+  }
+  device_option {
+  }
+  engine: "NNPACK,DEPTHWISE_3x3"
+}
+op {
+  input: "315"
+  output: "317"
+  name: ""
+  type: "Int8Relu"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.165826797485
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "317"
+  output: "319"
+  name: ""
+  type: "Int8AveragePool"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "kernel"
+    i: 7
+  }
+  arg {
+    name: "stride"
+    i: 1
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.165826797485
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "319"
+  input: "320"
+  input: "321"
+  output: "323"
+  name: ""
+  type: "Int8FC"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 78
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.190309166908
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "323"
+  output: "325"
+  name: ""
+  type: "Int8Softmax"
+  arg {
+    name: "order"
+    s: "NHWC"
+  }
+  arg {
+    name: "Y_scale"
+    f: 0.00390625
+  }
+  arg {
+    name: "Y_zero_point"
+    i: 0
+  }
+  device_option {
+  }
+  engine: ""
+}
+op {
+  input: "325"
+  output: "softmax"
+  name: ""
+  type: "Int8Dequantize"
+}
+external_input: "data"
+external_input: "4"
+external_input: "5"
+external_input: "10"
+external_input: "11"
+external_input: "16"
+external_input: "17"
+external_input: "22"
+external_input: "23"
+external_input: "26"
+external_input: "27"
+external_input: "32"
+external_input: "33"
+external_input: "38"
+external_input: "39"
+external_input: "42"
+external_input: "43"
+external_input: "48"
+external_input: "49"
+external_input: "54"
+external_input: "55"
+external_input: "61"
+external_input: "62"
+external_input: "67"
+external_input: "68"
+external_input: "73"
+external_input: "74"
+external_input: "77"
+external_input: "78"
+external_input: "83"
+external_input: "84"
+external_input: "89"
+external_input: "90"
+external_input: "96"
+external_input: "97"
+external_input: "102"
+external_input: "103"
+external_input: "108"
+external_input: "109"
+external_input: "115"
+external_input: "116"
+external_input: "121"
+external_input: "122"
+external_input: "127"
+external_input: "128"
+external_input: "131"
+external_input: "132"
+external_input: "137"
+external_input: "138"
+external_input: "143"
+external_input: "144"
+external_input: "150"
+external_input: "151"
+external_input: "156"
+external_input: "157"
+external_input: "162"
+external_input: "163"
+external_input: "169"
+external_input: "170"
+external_input: "175"
+external_input: "176"
+external_input: "181"
+external_input: "182"
+external_input: "188"
+external_input: "189"
+external_input: "194"
+external_input: "195"
+external_input: "200"
+external_input: "201"
+external_input: "204"
+external_input: "205"
+external_input: "210"
+external_input: "211"
+external_input: "216"
+external_input: "217"
+external_input: "223"
+external_input: "224"
+external_input: "229"
+external_input: "230"
+external_input: "235"
+external_input: "236"
+external_input: "242"
+external_input: "243"
+external_input: "248"
+external_input: "249"
+external_input: "254"
+external_input: "255"
+external_input: "258"
+external_input: "259"
+external_input: "264"
+external_input: "265"
+external_input: "270"
+external_input: "271"
+external_input: "277"
+external_input: "278"
+external_input: "283"
+external_input: "284"
+external_input: "289"
+external_input: "290"
+external_input: "296"
+external_input: "297"
+external_input: "302"
+external_input: "303"
+external_input: "308"
+external_input: "309"
+external_input: "312"
+external_input: "313"
+external_input: "320"
+external_input: "321"
+external_output: "softmax"
